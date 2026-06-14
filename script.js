@@ -210,6 +210,45 @@ document.addEventListener('DOMContentLoaded', async () => {
     });
   });
 
+  // Hubungkan tombol "Donasi Sekarang" di Landing Page ke Portal Donatur
+  const donateBtn = document.getElementById('donateBtn');
+  if (donateBtn) {
+    donateBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      
+      // Buka portal dashboard
+      dashboardPortal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+      
+      // Langsung arahkan ke Portal Donatur
+      loginGate.style.display = 'none';
+      donorPortalContainer.style.display = 'flex';
+      donorPortalContainer.style.width = '100%';
+      donorPortalContainer.style.height = '100%';
+      
+      populateMosquesDropdown();
+      if (donorSelectMosque) {
+        populateDonorProgramsDropdown(donorSelectMosque.value);
+        donorSelectMethod.dispatchEvent(new Event('change'));
+      }
+      
+      syncDonorDashboardView();
+      
+      // Klik tab "Kirim Donasi" secara otomatis
+      const donorSendLink = donorPortalContainer.querySelector('[data-tab="donor-send"]');
+      if (donorSendLink) {
+        donorSendLink.click();
+      }
+      
+      // Isi otomatis nominal donasi sesuai pilihan di landing page
+      const donorInputAmount = document.getElementById('donorInputAmount');
+      if (donorInputAmount) {
+        donorInputAmount.value = selectedAmount;
+        donorInputAmount.dispatchEvent(new Event('input'));
+      }
+    });
+  }
+
   // === Contact Form Handler ===
   const contactForm = document.getElementById('contactForm');
   const submitBtn = document.getElementById('submitBtn');
