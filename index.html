@@ -1,0 +1,1228 @@
+<!DOCTYPE html>
+<html lang="id" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Amanah Masjid — Platform digital modern untuk pengelolaan masjid, donasi online, program sosial, administrasi jamaah, dan layanan berbasis AI.">
+  <meta name="keywords" content="masjid, donasi, pengelolaan masjid, program sosial, jamaah, AI, digital masjid">
+  <meta name="author" content="Amanah Masjid">
+  <meta name="theme-color" content="#030712">
+  <title>Amanah Masjid — Platform Digital Masjid Modern</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Scroll Progress Bar -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- ==================== NAVBAR ==================== -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a href="#" class="navbar-brand">
+        <div class="brand-icon">🕌</div>
+        <span class="brand-text">Amanah Masjid</span>
+      </a>
+      <ul class="navbar-nav" id="navMenu">
+        <li><a href="#features">Fitur</a></li>
+        <li><a href="#programs">Program</a></li>
+        <li><a href="#stats">Statistik</a></li>
+        <li><a href="#testimonials">Testimoni</a></li>
+        <li><a href="#contact">Kontak</a></li>
+        <li><a href="#donate" class="btn-nav-cta">Donasi Sekarang</a></li>
+        <li><a href="#" id="btnRegisterMosque" class="btn-nav-register-mosque">🕌 Daftarkan Masjid</a></li>
+        <li><a href="#" id="openDashboardBtn" class="btn-nav-dashboard">⚡ Portal Dashboard</a></li>
+      </ul>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ==================== HERO SECTION ==================== -->
+  <section class="hero" id="hero">
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-text">
+          <div class="hero-badge">
+            <span class="pulse"></span>
+            Platform Digital Masjid #1
+          </div>
+          <h1>
+            Kelola Masjid
+            <span class="line-accent">Dengan Lebih Amanah</span>
+          </h1>
+          <p class="hero-description">
+            Platform digital terdepan untuk pengelolaan masjid yang transparan, efisien, dan modern. 
+            Donasi, program sosial, administrasi jamaah, semua terintegrasi dalam satu platform berbasis AI.
+          </p>
+          <div class="hero-actions">
+            <a href="#donate" class="btn-primary">
+              ❤️ Mulai Berdonasi
+            </a>
+            <a href="#features" class="btn-secondary">
+              ✨ Jelajahi Fitur
+            </a>
+          </div>
+          <div class="hero-stats">
+            <div class="stat-item">
+              <div class="stat-number" data-target="2" data-suffix="">0</div>
+              <div class="stat-label">Masjid Terdaftar</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number" data-target="0" data-suffix="">0</div>
+              <div class="stat-label">Jamaah Aktif</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number" data-target="0" data-prefix="Rp " data-suffix="">0</div>
+              <div class="stat-label">Donasi Tersalurkan</div>
+            </div>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="hero-mosque-art">
+            <div class="mosque-glow"></div>
+            <div class="floating-particle"></div>
+            <div class="floating-particle"></div>
+            <div class="floating-particle"></div>
+            <div class="floating-particle"></div>
+            <div class="floating-particle"></div>
+            <div class="mosque-svg-wrapper">
+              <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <!-- Mosque Dome -->
+                <path d="M100 20 C60 20, 30 60, 30 90 L30 160 L170 160 L170 90 C170 60, 140 20, 100 20Z" 
+                      fill="url(#mosqueGrad)" opacity="0.15" stroke="url(#mosqueGrad)" stroke-width="1.5"/>
+                <!-- Central Tower -->
+                <rect x="90" y="10" width="20" height="30" rx="10" fill="url(#mosqueGrad)" opacity="0.3"/>
+                <!-- Crescent -->
+                <circle cx="100" cy="8" r="5" fill="#10b981" opacity="0.8"/>
+                <circle cx="102" cy="7" r="4" fill="#030712"/>
+                <!-- Windows -->
+                <rect x="55" y="100" width="18" height="35" rx="9" fill="url(#mosqueGrad)" opacity="0.2"/>
+                <rect x="91" y="90" width="18" height="45" rx="9" fill="url(#mosqueGrad)" opacity="0.25"/>
+                <rect x="127" y="100" width="18" height="35" rx="9" fill="url(#mosqueGrad)" opacity="0.2"/>
+                <!-- Base -->
+                <rect x="20" y="155" width="160" height="15" rx="4" fill="url(#mosqueGrad)" opacity="0.12"/>
+                <!-- Minarets -->
+                <rect x="25" y="70" width="12" height="90" rx="3" fill="url(#mosqueGrad)" opacity="0.15"/>
+                <rect x="163" y="70" width="12" height="90" rx="3" fill="url(#mosqueGrad)" opacity="0.15"/>
+                <circle cx="31" cy="68" r="8" fill="url(#mosqueGrad)" opacity="0.12"/>
+                <circle cx="169" cy="68" r="8" fill="url(#mosqueGrad)" opacity="0.12"/>
+                <!-- Stars -->
+                <circle cx="50" cy="45" r="2" fill="#f59e0b" opacity="0.5"/>
+                <circle cx="150" cy="50" r="1.5" fill="#f59e0b" opacity="0.4"/>
+                <circle cx="75" cy="30" r="1" fill="#fbbf24" opacity="0.6"/>
+                <circle cx="130" cy="35" r="1.5" fill="#fbbf24" opacity="0.5"/>
+                <defs>
+                  <linearGradient id="mosqueGrad" x1="30" y1="10" x2="170" y2="170">
+                    <stop offset="0%" stop-color="#10b981"/>
+                    <stop offset="100%" stop-color="#34d399"/>
+                  </linearGradient>
+                </defs>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FEATURES SECTION ==================== -->
+  <section class="features" id="features">
+    <div class="container">
+      <div class="section-header animate-on-scroll">
+        <div class="section-badge">
+          <span class="badge-dot"></span>
+          Fitur Unggulan
+        </div>
+        <h2 class="section-title">Semua yang Masjid <span class="text-gradient-primary">Butuhkan</span></h2>
+        <p class="section-subtitle">
+          Platform lengkap dengan teknologi terdepan untuk mengelola masjid secara modern, transparan, dan efisien.
+        </p>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-card animate-on-scroll">
+          <div class="feature-icon emerald">🕌</div>
+          <h3>Manajemen Masjid</h3>
+          <p>Kelola data masjid, jadwal kegiatan, inventaris, dan informasi pengurus dalam satu dashboard terintegrasi yang mudah digunakan.</p>
+        </div>
+
+        <div class="feature-card animate-on-scroll">
+          <div class="feature-icon gold">💰</div>
+          <h3>Donasi Online</h3>
+          <p>Terima donasi secara digital dengan berbagai metode pembayaran. Laporan keuangan otomatis dan transparan untuk setiap donatur.</p>
+        </div>
+
+        <div class="feature-card animate-on-scroll">
+          <div class="feature-icon indigo">🤝</div>
+          <h3>Program Sosial</h3>
+          <p>Buat dan kelola program sosial seperti santunan, beasiswa, dan bakti sosial. Pantau progres dan dampak program secara real-time.</p>
+        </div>
+
+        <div class="feature-card animate-on-scroll">
+          <div class="feature-icon rose">👥</div>
+          <h3>Administrasi Jamaah</h3>
+          <p>Database jamaah yang lengkap dengan profil, riwayat kegiatan, dan sistem notifikasi otomatis untuk pengumuman masjid.</p>
+        </div>
+
+        <div class="feature-card animate-on-scroll">
+          <div class="feature-icon cyan">🤖</div>
+          <h3>AI Assistant & OCR</h3>
+          <p>Asisten AI yang menjawab pertanyaan jamaah, OCR untuk scan kuitansi donasi otomatis, dan analisis data cerdas berbasis machine learning.</p>
+        </div>
+
+        <div class="feature-card animate-on-scroll">
+          <div class="feature-icon violet">📱</div>
+          <h3>WhatsApp Bot</h3>
+          <p>Bot WhatsApp terintegrasi untuk menerima donasi, menjawab pertanyaan, mengirim pengumuman, dan reminder jadwal sholat otomatis.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== PROGRAMS SECTION ==================== -->
+  <section class="programs" id="programs">
+    <div class="container">
+      <div class="section-header animate-on-scroll">
+        <div class="section-badge">
+          <span class="badge-dot"></span>
+          Program Unggulan
+        </div>
+        <h2 class="section-title">Program <span class="text-gradient-accent">Sosial & Keagamaan</span></h2>
+        <p class="section-subtitle">
+          Berbagai program sosial dan keagamaan yang dikelola secara profesional untuk kesejahteraan umat.
+        </p>
+      </div>
+
+      <div class="programs-grid">
+        <div class="program-card animate-on-scroll">
+          <div class="program-card-image" style="background: linear-gradient(135deg, #065f46, #0a0f1e);">
+            🕋
+          </div>
+          <div class="program-card-body">
+            <span class="program-tag active">Sedang Berjalan</span>
+            <h3>Beasiswa Tahfidz Al-Quran</h3>
+            <p>Program beasiswa untuk penghafal Al-Quran, mencakup biaya pendidikan, tempat tinggal, dan bimbingan tahfidz intensif.</p>
+            <div class="program-progress">
+              <div class="progress-bar">
+                <div class="progress-fill" style="width: 72%;"></div>
+              </div>
+              <div class="progress-info">
+                <span>Terkumpul: Rp 72.4 Juta</span>
+                <span>Target: Rp 100 Juta</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="program-card animate-on-scroll">
+          <div class="program-card-image" style="background: linear-gradient(135deg, #7c2d12, #0a0f1e);">
+            🍲
+          </div>
+          <div class="program-card-body">
+            <span class="program-tag active">Sedang Berjalan</span>
+            <h3>Dapur Ramadhan</h3>
+            <p>Program penyediaan makanan berbuka puasa gratis untuk masyarakat sekitar masjid selama bulan Ramadhan.</p>
+            <div class="program-progress">
+              <div class="progress-bar">
+                <div class="progress-fill" style="width: 89%;"></div>
+              </div>
+              <div class="progress-info">
+                <span>Terkumpul: Rp 44.5 Juta</span>
+                <span>Target: Rp 50 Juta</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="program-card animate-on-scroll">
+          <div class="program-card-image" style="background: linear-gradient(135deg, #1e3a5f, #0a0f1e);">
+            🏗️
+          </div>
+          <div class="program-card-body">
+            <span class="program-tag upcoming">Akan Datang</span>
+            <h3>Renovasi Masjid</h3>
+            <p>Program renovasi dan perluasan area sholat untuk mengakomodasi jamaah yang semakin bertambah.</p>
+            <div class="program-progress">
+              <div class="progress-bar">
+                <div class="progress-fill" style="width: 35%;"></div>
+              </div>
+              <div class="progress-info">
+                <span>Terkumpul: Rp 175 Juta</span>
+                <span>Target: Rp 500 Juta</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== STATS SECTION ==================== -->
+  <section class="stats-section" id="stats">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-card animate-on-scroll">
+          <div class="stat-card-icon">🕌</div>
+          <div class="stat-card-number" data-target="2">0</div>
+          <div class="stat-card-label">Masjid Terdaftar</div>
+        </div>
+        <div class="stat-card animate-on-scroll">
+          <div class="stat-card-icon">👥</div>
+          <div class="stat-card-number" data-target="0">0</div>
+          <div class="stat-card-label">Jamaah Aktif</div>
+        </div>
+        <div class="stat-card animate-on-scroll">
+          <div class="stat-card-icon">💝</div>
+          <div class="stat-card-number" data-target="0">0</div>
+          <div class="stat-card-label">Total Donasi</div>
+        </div>
+        <div class="stat-card animate-on-scroll">
+          <div class="stat-card-icon">📋</div>
+          <div class="stat-card-number" data-target="4">0</div>
+          <div class="stat-card-label">Program Aktif</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== DONATION CTA SECTION ==================== -->
+  <section class="donation-cta" id="donate">
+    <div class="container">
+      <div class="donation-card animate-on-scroll">
+        <div class="donation-emoji">🤲</div>
+        <h2>Salurkan <span class="text-gradient-primary">Donasi Terbaik</span> Anda</h2>
+        <p>
+          Setiap donasi Anda akan dikelola secara transparan dan amanah. 
+          Laporan penggunaan dana dapat dipantau secara real-time melalui platform kami.
+        </p>
+        <div class="donation-amounts">
+          <button class="amount-btn" data-amount="50000">Rp 50.000</button>
+          <button class="amount-btn" data-amount="100000">Rp 100.000</button>
+          <button class="amount-btn active" data-amount="250000">Rp 250.000</button>
+          <button class="amount-btn" data-amount="500000">Rp 500.000</button>
+          <button class="amount-btn" data-amount="1000000">Rp 1.000.000</button>
+        </div>
+        <a href="#contact" class="btn-primary" id="donateBtn">
+          ❤️ Donasi Sekarang
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== TESTIMONIALS SECTION ==================== -->
+  <section class="testimonials" id="testimonials">
+    <div class="container">
+      <div class="section-header animate-on-scroll">
+        <div class="section-badge">
+          <span class="badge-dot"></span>
+          Testimoni
+        </div>
+        <h2 class="section-title">Dipercaya oleh <span class="text-gradient-primary">Ribuan Masjid</span></h2>
+        <p class="section-subtitle">
+          Pendapat mereka yang telah menggunakan platform Amanah Masjid untuk pengelolaan masjid mereka.
+        </p>
+      </div>
+
+      <div class="testimonials-grid">
+        <div class="testimonial-card animate-on-scroll">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">
+            "Platform yang luar biasa! Sejak menggunakan Amanah Masjid, pengelolaan keuangan masjid kami menjadi jauh lebih transparan. Jamaah pun semakin percaya karena bisa melihat laporan donasi secara real-time."
+          </p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">HA</div>
+            <div class="testimonial-author-info">
+              <h4>H. Ahmad Fauzi</h4>
+              <span>Ketua DKM Masjid Al-Ikhlas, Jakarta</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card animate-on-scroll">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">
+            "Fitur WhatsApp Bot sangat membantu kami. Jamaah bisa mendapat info jadwal sholat, pengumuman, bahkan berdonasi langsung melalui WhatsApp. Praktis dan modern!"
+          </p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">US</div>
+            <div class="testimonial-author-info">
+              <h4>Ustadz Syahrul</h4>
+              <span>Imam Masjid Ar-Rahman, Bandung</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card animate-on-scroll">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">
+            "OCR untuk scan kuitansi donasi benar-benar menghemat waktu bendahara kami. Tidak perlu lagi input manual satu per satu. Sistem AI-nya juga sangat akurat dalam mengenali data kuitansi."
+          </p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">DR</div>
+            <div class="testimonial-author-info">
+              <h4>Drs. Ridwan</h4>
+              <span>Bendahara Masjid Nurul Iman, Surabaya</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== CONTACT SECTION ==================== -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="section-header animate-on-scroll">
+        <div class="section-badge">
+          <span class="badge-dot"></span>
+          Hubungi Kami
+        </div>
+        <h2 class="section-title">Mari <span class="text-gradient-primary">Berkolaborasi</span></h2>
+        <p class="section-subtitle">
+          Punya pertanyaan atau ingin mendaftarkan masjid Anda? Jangan ragu untuk menghubungi tim kami.
+        </p>
+      </div>
+
+      <div class="contact-content animate-on-scroll">
+        <div class="contact-info-cards">
+          <div class="contact-info-card">
+            <div class="contact-icon">📍</div>
+            <div>
+              <h4>Alamat Kantor</h4>
+              <p>Jl. Masjid Raya No. 7, Jakarta Pusat 10110</p>
+            </div>
+          </div>
+          <div class="contact-info-card">
+            <div class="contact-icon">📧</div>
+            <div>
+              <h4>Email</h4>
+              <p>info@amanahmasjid.id</p>
+            </div>
+          </div>
+          <div class="contact-info-card">
+            <div class="contact-icon">📱</div>
+            <div>
+              <h4>WhatsApp</h4>
+              <p>+62 812 3456 7890</p>
+            </div>
+          </div>
+          <div class="contact-info-card">
+            <div class="contact-icon">🕐</div>
+            <div>
+              <h4>Jam Operasional</h4>
+              <p>Senin - Jumat: 08:00 - 17:00 WIB</p>
+            </div>
+          </div>
+        </div>
+
+        <form class="contact-form" id="contactForm">
+          <div class="form-row">
+            <div class="form-group">
+              <input type="text" id="contactName" placeholder="Nama Lengkap" required>
+            </div>
+            <div class="form-group">
+              <input type="email" id="contactEmail" placeholder="Email" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <input type="text" id="contactSubject" placeholder="Subjek">
+          </div>
+          <div class="form-group">
+            <textarea id="contactMessage" placeholder="Tulis pesan Anda..." required></textarea>
+          </div>
+          <button type="submit" class="btn-submit" id="submitBtn">
+            Kirim Pesan ✉️
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <a href="#" class="navbar-brand">
+            <div class="brand-icon">🕌</div>
+            <span class="brand-text">Amanah Masjid</span>
+          </a>
+          <p>Platform digital terdepan untuk pengelolaan masjid yang transparan, efisien, dan modern di seluruh Indonesia.</p>
+          <div class="footer-social">
+            <a href="#" class="social-link" aria-label="Facebook">f</a>
+            <a href="#" class="social-link" aria-label="Instagram">📷</a>
+            <a href="#" class="social-link" aria-label="YouTube">▶</a>
+            <a href="#" class="social-link" aria-label="Twitter">𝕏</a>
+          </div>
+        </div>
+
+        <div class="footer-links">
+          <h4>Platform</h4>
+          <ul>
+            <li><a href="#features">Fitur</a></li>
+            <li><a href="#programs">Program</a></li>
+            <li><a href="#donate">Donasi</a></li>
+            <li><a href="#">Harga</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links">
+          <h4>Sumber Daya</h4>
+          <ul>
+            <li><a href="#">Dokumentasi</a></li>
+            <li><a href="#">API Reference</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">FAQ</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="#">Kebijakan Privasi</a></li>
+            <li><a href="#">Syarat & Ketentuan</a></li>
+            <li><a href="#">Keamanan</a></li>
+            <li><a href="#">Lisensi</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>&copy; 2026 Amanah Masjid. Hak cipta dilindungi.</span>
+        <span>Dibuat dengan ❤️ untuk kemajuan masjid di Indonesia</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== REGISTRATION MODALS ==================== -->
+  <div class="modal-overlay" id="registerMosqueModal">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>🕌 Pendaftaran Masjid Baru</h3>
+        <button class="modal-close" id="closeRegisterModalBtn">&times;</button>
+      </div>
+      <form id="mosqueRegisterForm" class="dashboard-form">
+        <p class="description">Daftarkan masjid Anda ke jaringan Amanah Masjid untuk mulai menerima donasi digital secara amanah dan transparan.</p>
+        <div class="form-group">
+          <label for="regMosqueName">Nama Masjid</label>
+          <input type="text" id="regMosqueName" placeholder="Contoh: Masjid Jami' Al-Huda" required>
+        </div>
+        <div class="form-group">
+          <label for="regMosqueAddress">Alamat Lengkap</label>
+          <textarea id="regMosqueAddress" placeholder="Jl. Raya No. X, Desa Y, Kec. Z" required></textarea>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="regMosqueCity">Kota/Kabupaten</label>
+            <input type="text" id="regMosqueCity" placeholder="Contoh: Jakarta Pusat" required>
+          </div>
+          <div class="form-group">
+            <label for="regDkmName">Nama Ketua DKM</label>
+            <input type="text" id="regDkmName" placeholder="Nama Lengkap" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="regDkmPhone">No. WhatsApp DKM</label>
+            <input type="text" id="regDkmPhone" placeholder="Contoh: 0812XXXXXXXX" required>
+          </div>
+          <div class="form-group">
+            <label for="regMosqueDoc">Dokumen Legalitas (SK DKM / Yayasan)</label>
+            <input type="file" id="regMosqueDoc" accept=".pdf,.jpg,.png">
+          </div>
+        </div>
+        <button type="submit" class="btn-primary">Kirim Pendaftaran ✉️</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Success Registration Modal -->
+  <div class="modal-overlay" id="registerSuccessModal">
+    <div class="modal-card success-card">
+      <div class="success-icon-wrapper">
+        <div class="success-icon">✓</div>
+      </div>
+      <h3>Pendaftaran Berhasil! 🎉</h3>
+      <p>Masjid Anda telah sukses terdaftar di platform Amanah Masjid. Silakan gunakan kredensial berikut untuk masuk ke Portal DKM:</p>
+      
+      <div class="credential-box">
+        <p><strong>Nama Masjid:</strong> <span id="successMosqueName"></span></p>
+        <p><strong>Username DKM:</strong> <span id="successUsername"></span></p>
+        <p><strong>Password Sementara:</strong> <span id="successPassword"></span></p>
+      </div>
+      
+      <p class="warning-text">⚠️ Mohon simpan sandi sementara ini dan segera ubah di menu Pengaturan setelah masuk.</p>
+      
+      <div class="modal-actions">
+        <button class="btn-primary" id="btnGoToLogin">Masuk ke Portal Dashboard</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== DASHBOARD PORTAL ==================== -->
+  <div class="dashboard-portal" id="dashboardPortal">
+    <!-- Close portal button -->
+    <button class="close-portal-gate" id="closePortalGateBtn" aria-label="Close portal">&times;</button>
+
+    <!-- State 1: Login Gate -->
+    <div class="login-gate" id="loginGate">
+      <div class="login-gate-header">
+        <span class="gate-logo">🕌</span>
+        <h2>Selamat Datang di Portal Amanah Masjid</h2>
+        <p id="loginGateSub">Pilih jenis akses akun untuk melanjutkan ke sistem</p>
+      </div>
+      
+      <!-- Option Card Grid -->
+      <div class="login-options" id="loginOptionsWrapper">
+        <div class="login-option-card" id="btnSelectDkm">
+          <div class="option-icon">🔑</div>
+          <h3>Pengurus DKM Masjid</h3>
+          <p>Kelola penerimaan donasi, scan OCR kuitansi, program sosial, dan operasional masjid Anda.</p>
+          <button class="btn-primary">Masuk Portal DKM</button>
+        </div>
+        <div class="login-option-card" id="btnSelectDonor">
+          <div class="option-icon">💖</div>
+          <h3>Donatur & Jamaah</h3>
+          <p>Salurkan donasi, pantau program sosial, hitung zakat bulanan, dan lihat riwayat donasi Anda.</p>
+          <button class="btn-secondary">Masuk Portal Donatur</button>
+        </div>
+      </div>
+
+      <!-- DKM Login Form (Initially Hidden) -->
+      <div class="dkm-login-form-wrapper" id="dkmLoginFormWrapper" style="display: none; max-width: 420px; width: 100%; margin: 1.5rem auto 0 auto; background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(16px); padding: 2rem; border-radius: var(--radius-md); border: 1px solid var(--glass-border); text-align: left; box-shadow: var(--shadow-lg);">
+        <h3 style="margin-bottom: 1.25rem; color: var(--color-primary-light); font-size: 1.2rem; display: flex; align-items: center; gap: 8px;">🔑 Login Pengurus DKM</h3>
+        <form id="dkmRealLoginForm">
+          <div class="form-group" style="margin-bottom: 1rem;">
+            <label for="loginSelectMosque" style="display: block; margin-bottom: 6px; font-size: 0.85rem; color: var(--text-secondary); font-weight: 500;">Pilih Masjid Kelolaan</label>
+            <select id="loginSelectMosque" style="width: 100%; padding: 12px; background: rgba(10, 15, 30, 0.8); border: 1px solid var(--glass-border); border-radius: var(--radius-sm); color: var(--text-main); font-family: inherit; font-size: 0.9rem;" required>
+              <!-- Populated dynamically -->
+            </select>
+          </div>
+          <div class="form-group" style="margin-bottom: 1.5rem;">
+            <label for="loginPassword" style="display: block; margin-bottom: 6px; font-size: 0.85rem; color: var(--text-secondary); font-weight: 500;">Password Sementara / Pengurus</label>
+            <input type="password" id="loginPassword" value="123456" placeholder="Masukkan password" style="width: 100%; padding: 12px; background: rgba(10, 15, 30, 0.8); border: 1px solid var(--glass-border); border-radius: var(--radius-sm); color: var(--text-main); font-family: inherit; font-size: 0.9rem;" required>
+          </div>
+          <div style="display: flex; gap: 12px;">
+            <button type="submit" class="btn-primary" style="flex: 1; padding: 12px; font-weight: 600;">Masuk 🚀</button>
+            <button type="button" class="btn-secondary" id="btnCancelDkmLogin" style="flex: 1; padding: 12px; font-weight: 600;">Kembali</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- State 2: DKM Portal -->
+    <div class="portal-wrapper dkm-portal-container" id="dkmPortalContainer" style="display: none; width: 100%; height: 100%; display: none;">
+      <!-- Sidebar -->
+      <aside class="dashboard-sidebar">
+        <div class="sidebar-header">
+          <div class="sidebar-brand">
+            <span class="brand-icon">🕌</span>
+            <span class="brand-text">Amanah Portal</span>
+          </div>
+          <button class="close-dashboard" id="closeDashboardBtn" aria-label="Close dashboard">&times;</button>
+        </div>
+        <nav class="sidebar-nav">
+          <ul>
+            <li><a href="#" class="sidebar-link active" data-tab="summary">📊 Ringkasan</a></li>
+            <li><a href="#" class="sidebar-link" data-tab="donations">💰 Donasi & OCR Scan</a></li>
+            <li><a href="#" class="sidebar-link" data-tab="programs">🤝 Program Sosial</a></li>
+            <li><a href="#" class="sidebar-link" data-tab="chatbot">🤖 AI Assistant</a></li>
+            <li><a href="#" class="sidebar-link" data-tab="whatsapp">📱 WhatsApp Bot</a></li>
+            <li><a href="#" class="sidebar-link" data-tab="settings">⚙️ Pengaturan Masjid</a></li>
+          </ul>
+        </nav>
+        <div class="sidebar-footer">
+          <div class="user-profile">
+            <div class="user-avatar">ADM</div>
+            <div class="user-info">
+              <h4 class="dkm-mosque-title">Masjid Al-Ikhlas</h4>
+              <span>Pengurus DKM</span>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="dashboard-main">
+        <header class="dashboard-header">
+          <div class="header-left">
+            <h2>Assalamualaikum, DKM <span class="admin-name">Admin</span> 👋</h2>
+            <p>Selamat datang di sistem manajemen masjid modern dan amanah.</p>
+          </div>
+          <div class="header-right">
+            <button class="btn-secondary btn-switch-portal">◀ Ganti Akses</button>
+            <div class="current-date-badge">
+              <span class="calendar-icon">📅</span>
+              <span class="dashboardDateClass">Senin, 1 Juni 2026</span>
+            </div>
+          </div>
+        </header>
+
+        <!-- Panel: Ringkasan -->
+        <section class="dashboard-panel active" id="panel-summary">
+          <div class="stats-overview">
+            <div class="stat-card">
+              <div class="stat-icon emerald">💰</div>
+              <div class="stat-info">
+                <h3>Saldo Kas Masjid</h3>
+                <p class="stat-value" id="dkmCashValue">Rp 0</p>
+                <span class="stat-growth green">Transparan & Real-time</span>
+              </div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon indigo">👥</div>
+              <div class="stat-info">
+                <h3>Jamaah Terdaftar</h3>
+                <p class="stat-value" id="dkmJamaahValue">0 Orang</p>
+                <span class="stat-growth green">Terdata Aktual</span>
+              </div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon cyan">📸</div>
+              <div class="stat-info">
+                <h3>Akurasi OCR Donasi</h3>
+                <p class="stat-value">96.2%</p>
+                <span class="stat-growth green">▲ Target SLA > 95%</span>
+              </div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon gold">🤖</div>
+              <div class="stat-info">
+                <h3>Uptime Service AI</h3>
+                <p class="stat-value">99.8%</p>
+                <span class="stat-growth green">Uptime Aktif</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="summary-grid">
+            <!-- Dynamic CSS Programs Chart -->
+            <div class="chart-container" style="display: flex; flex-direction: column; justify-content: space-between;">
+              <h3>📈 Progres Pendanaan Program Aktif (%)</h3>
+              <div class="bar-chart-programs" id="dkmProgramsChart">
+                <!-- Dynamically populated program bars -->
+              </div>
+              <p style="font-size: 0.75rem; color: var(--text-muted); text-align: center; margin-top: 10px;">Progres pengumpulan dana masing-masing program sosial kemasyarakatan.</p>
+            </div>
+
+            <!-- Audit Log (Compliance) -->
+            <div class="audit-log-container">
+              <div class="container-header">
+                <h3>📋 Log Aktivitas Sistem (Audit Trail)</h3>
+                <span class="badge-audit">Immutable Log</span>
+              </div>
+              <ul class="audit-list" id="dkmAuditList">
+                <!-- Dynamically populated -->
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- Panel: Donasi & OCR Scan -->
+        <section class="dashboard-panel" id="panel-donations">
+          <div class="donations-grid">
+            <!-- OCR Upload & Simulator -->
+            <div class="ocr-section">
+              <h3>📸 Scan Kuitansi Donasi Otomatis (OCR AI Engine)</h3>
+              <p class="description">Unggah bukti transfer Anda untuk memproses donasi secara otomatis. Sistem AI akan mengekstrak informasi dan mendeteksi penipuan secara real-time.</p>
+              
+              <div class="ocr-dropzone" id="ocrDropzone">
+                <input type="file" id="ocrFileInput" accept="image/*" style="display: none;">
+                <div class="dropzone-content">
+                  <div class="dropzone-icon">📤</div>
+                  <h4>Tarik & Lepas gambar bukti transfer di sini</h4>
+                  <p>atau klik untuk memilih file dari komputer (Format: JPG, PNG; Maksimal 5MB)</p>
+                </div>
+                <div class="scanner-laser" id="scannerLaser" style="display: none;"></div>
+              </div>
+
+              <!-- Demo OCR buttons for DKM -->
+              <div class="demo-ocr-shortcuts" style="margin-top: 1rem; display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; align-items: center;">
+                <span style="font-size: 0.85rem; color: var(--text-secondary); text-align: center; display: inline-block; margin-right: 5px;">Demo Bukti Transfer Cepat:</span>
+                <button type="button" class="btn-demo-ocr" data-demo-type="valid-1" style="padding: 8px 12px; font-size: 0.8rem; background: rgba(16, 185, 129, 0.1); border: 1px solid var(--color-primary-glow); border-radius: 6px; color: var(--color-primary-light); cursor: pointer; transition: all 0.2s;">📄 BCA Rp 250k (Valid)</button>
+                <button type="button" class="btn-demo-ocr" data-demo-type="valid-2" style="padding: 8px 12px; font-size: 0.8rem; background: rgba(16, 185, 129, 0.1); border: 1px solid var(--color-primary-glow); border-radius: 6px; color: var(--color-primary-light); cursor: pointer; transition: all 0.2s;">📄 Mandiri Rp 1.0M (Valid)</button>
+                <button type="button" class="btn-demo-ocr" data-demo-type="fraud" style="padding: 8px 12px; font-size: 0.8rem; background: rgba(239, 68, 68, 0.1); border: 1px solid rgba(239, 68, 68, 0.3); border-radius: 6px; color: #f87171; cursor: pointer; transition: all 0.2s;">⚠️ Bukti Palsu (Fraud)</button>
+              </div>
+
+              <!-- Previews and simulated OCR output form -->
+              <div class="ocr-result-form" id="ocrResultForm" style="display: none;">
+                <h4>📝 Hasil Ekstraksi OCR AI (Konfirmasi)</h4>
+                <div class="form-grid">
+                  <div class="form-group">
+                    <label>Nama Pengirim</label>
+                    <input type="text" id="ocrSenderName" value="" readonly>
+                  </div>
+                  <div class="form-group">
+                    <label>Nama Bank</label>
+                    <input type="text" id="ocrBankName" value="" readonly>
+                  </div>
+                  <div class="form-group">
+                    <label>Tanggal & Waktu</label>
+                    <input type="text" id="ocrDate" value="" readonly>
+                  </div>
+                  <div class="form-group">
+                    <label>Nominal Donasi (Rp)</label>
+                    <input type="text" id="ocrAmount" value="" readonly>
+                  </div>
+                  <div class="form-group">
+                    <label>Tingkat Risiko (Fraud Score)</label>
+                    <input type="text" id="ocrRiskScore" value="" readonly>
+                  </div>
+                  <div class="form-group">
+                    <label>Status Verifikasi</label>
+                    <input type="text" id="ocrStatus" value="" readonly>
+                  </div>
+                </div>
+                <div class="form-actions">
+                  <button class="btn-primary" id="btnConfirmOcr">✅ Konfirmasi & Masukkan Data</button>
+                  <button class="btn-secondary" id="btnResetOcr">Batal</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- History Table -->
+            <div class="history-section">
+              <h3>💰 Riwayat Donasi & Status Verifikasi</h3>
+              <div class="table-wrapper">
+                <table class="donations-table">
+                  <thead>
+                    <tr>
+                      <th>ID Donasi</th>
+                      <th>Nama Donatur</th>
+                      <th>Bank</th>
+                      <th>Nominal</th>
+                      <th>Risk Score</th>
+                      <th>Status</th>
+                    </tr>
+                  </thead>
+                  <tbody id="donationsTableBody">
+                    <!-- Dikelola dinamis oleh JS -->
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Panel: Program Sosial -->
+        <section class="dashboard-panel" id="panel-programs">
+          <div class="programs-dashboard-grid">
+            <!-- Form Tambah Program -->
+            <div class="add-program-form-container">
+              <h3>🤝 Buat Program Sosial Baru</h3>
+              <p class="description">Buat program penggalangan dana sosial kemasyarakatan atau keagamaan baru di lingkungan masjid.</p>
+              <form id="newProgramForm" class="dashboard-form">
+                <div class="form-group">
+                  <label for="programTitle">Judul Program</label>
+                  <input type="text" id="programTitle" placeholder="Contoh: Beasiswa Tahfidz Al-Quran" required>
+                </div>
+                <div class="form-group">
+                  <label for="programDesc">Deskripsi Singkat</label>
+                  <textarea id="programDesc" placeholder="Jelaskan tujuan program ini..." required></textarea>
+                </div>
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="programTarget">Target Dana (Rp)</label>
+                    <input type="number" id="programTarget" placeholder="Contoh: 50000000" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="programTag">Tag Status</label>
+                    <select id="programTag">
+                      <option value="active">Sedang Berjalan</option>
+                      <option value="upcoming">Akan Datang</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="programEmoji">Emoji Ikon</label>
+                    <input type="text" id="programEmoji" placeholder="Contoh: 🕋" value="🕋" required>
+                  </div>
+                </div>
+                <button type="submit" class="btn-primary">✨ Buat Program Baru</button>
+              </form>
+            </div>
+
+            <!-- List Program Saat Ini -->
+            <div class="current-programs-container">
+              <h3>📋 Daftar Program & Progress Donasi</h3>
+              <div class="programs-list" id="dashboardProgramsList">
+                <!-- Dikelola dinamis oleh JS -->
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Panel: AI Assistant Chatbot -->
+        <section class="dashboard-panel" id="panel-chatbot">
+          <div class="chatbot-workspace">
+            <div class="chatbot-info">
+              <div class="chatbot-avatar">🤖</div>
+              <div class="chatbot-title">
+                <h3>Asisten Virtual Masjid</h3>
+                <p>Mampu menjawab tanya jawab fiqih, kalkulator zakat, jadwal sholat, & info DKM.</p>
+              </div>
+            </div>
+            
+            <div class="chatbot-messages" id="chatbotMessages">
+              <div class="chat-message assistant">
+                <div class="message-content">
+                  Assalamu'alaikum! Saya Asisten AI Masjid. Ada yang bisa saya bantu hari ini? 🤲
+                </div>
+              </div>
+            </div>
+
+            <div class="chatbot-suggestions">
+              <button class="suggestion-btn" data-query="Berapa zakat penghasilan saya jika gaji Rp 10.000.000?">🧮 Hitung Zakat Penghasilan</button>
+              <button class="suggestion-btn" data-query="Jam berapa sholat Maghrib hari ini?">🌅 Jadwal Sholat Hari Ini</button>
+              <button class="suggestion-btn" data-query="Ada program sosial apa saja di masjid ini?">🤝 Info Program Masjid</button>
+            </div>
+
+            <form id="chatbotForm" class="chatbot-input-container">
+              <input type="text" id="chatbotInput" placeholder="Tulis pertanyaan Anda di sini..." required>
+              <button type="submit" class="btn-send-message">Kirim ✉️</button>
+            </form>
+          </div>
+        </section>
+
+        <!-- Panel: WhatsApp Bot Simulator -->
+        <section class="dashboard-panel" id="panel-whatsapp">
+          <div class="whatsapp-simulator-layout">
+            <!-- Info Panel -->
+            <div class="wa-info-panel">
+              <h3>📱 WhatsApp Business API Bot Simulator</h3>
+              <p class="description">Simulasikan bagaimana jamaah berinteraksi dengan Bot WhatsApp resmi Amanah Masjid. Bot ini melayani berbagai perintah otomatis secara real-time.</p>
+              
+              <div class="wa-commands-list">
+                <h4>📋 Daftar Command WhatsApp:</h4>
+                <ul>
+                  <li><button class="btn-wa-cmd" data-cmd="/jadwal"><code>/jadwal</code> atau <code>/sholat</code> - Jadwal Sholat hari ini</button></li>
+                  <li><button class="btn-wa-cmd" data-cmd="/donasi"><code>/donasi</code> atau <code>/infaq</code> - Alur Donasi Cepat</button></li>
+                  <li><button class="btn-wa-cmd" data-cmd="/saldo"><code>/saldo</code> atau <code>/laporan</code> - Saldo donasi masjid</button></li>
+                  <li><button class="btn-wa-cmd" data-cmd="/program"><code>/program</code> - Program sosial aktif</button></li>
+                  <li><button class="btn-wa-cmd" data-cmd="/zakat"><code>/zakat</code> - Kalkulator zakat cepat</button></li>
+                  <li><button class="btn-wa-cmd" data-cmd="/bantuan"><code>/bantuan</code> atau <code>/help</code> - Menampilkan menu bantuan</button></li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Phone Screen Mockup -->
+            <div class="phone-mockup">
+              <div class="phone-screen">
+                <div class="phone-header">
+                  <div class="phone-camera"></div>
+                  <div class="wa-header-bar">
+                    <div class="wa-back-arrow">←</div>
+                    <div class="wa-avatar">🕌</div>
+                    <div class="wa-contact-info">
+                      <h4>Amanah Masjid Bot ✅</h4>
+                      <span>Online - Hubungi Kami</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="phone-chat-body" id="waChatBody">
+                  <div class="wa-message system">
+                    Pesan di enkripsi secara end-to-end.
+                  </div>
+                  <div class="wa-message incoming">
+                    Assalamu'alaikum! Selamat datang di Layanan WhatsApp Bot Amanah Masjid. Ketik <strong>/bantuan</strong> untuk melihat menu layanan. 🕌
+                  </div>
+                </div>
+
+                <div class="phone-footer">
+                  <form id="waForm" class="wa-input-container">
+                    <input type="text" id="waInput" placeholder="Tulis pesan..." required>
+                    <button type="submit" class="wa-btn-send">▶</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Panel: Pengaturan Masjid -->
+        <section class="dashboard-panel" id="panel-settings">
+          <div class="add-program-form-container" style="max-width: 600px; margin: 0 auto; padding: 2rem; background: rgba(255,255,255,0.02); border: 1px solid var(--glass-border); border-radius: var(--radius-md);">
+            <h3 style="color: var(--color-primary-light); margin-bottom: 0.5rem; font-size: 1.3rem; display: flex; align-items: center; gap: 8px;">⚙️ Pengaturan Operasional Masjid</h3>
+            <p class="description" style="margin-bottom: 1.5rem; font-size: 0.85rem;">Ubah informasi rekening pembayaran, data ketua DKM, dan setelan WhatsApp Bot untuk masjid Anda.</p>
+            
+            <form id="mosqueSettingsForm" class="dashboard-form">
+              <div class="form-row" style="display: flex; gap: 12px; margin-bottom: 1rem;">
+                <div class="form-group" style="flex: 1;">
+                  <label for="settingsDkmName" style="display: block; margin-bottom: 4px; font-size: 0.85rem; color: var(--text-secondary);">Nama Ketua DKM</label>
+                  <input type="text" id="settingsDkmName" placeholder="Nama Lengkap Ketua DKM" style="width: 100%; padding: 10px; background: rgba(10, 15, 30, 0.8); border: 1px solid var(--glass-border); border-radius: var(--radius-sm); color: white;" required>
+                </div>
+                <div class="form-group" style="flex: 1;">
+                  <label for="settingsJamaah" style="display: block; margin-bottom: 4px; font-size: 0.85rem; color: var(--text-secondary);">Jumlah Jamaah Terdaftar</label>
+                  <input type="number" id="settingsJamaah" placeholder="Contoh: 1450" style="width: 100%; padding: 10px; background: rgba(10, 15, 30, 0.8); border: 1px solid var(--glass-border); border-radius: var(--radius-sm); color: white;" required>
+                </div>
+              </div>
+              <div class="form-row" style="display: flex; gap: 12px; margin-bottom: 1rem;">
+                <div class="form-group" style="flex: 1;">
+                  <label for="settingsBankBca" style="display: block; margin-bottom: 4px; font-size: 0.85rem; color: var(--text-secondary);">Nomor Rekening BCA</label>
+                  <input type="text" id="settingsBankBca" placeholder="Contoh: 123-456-7890" style="width: 100%; padding: 10px; background: rgba(10, 15, 30, 0.8); border: 1px solid var(--glass-border); border-radius: var(--radius-sm); color: white;" required>
+                </div>
+                <div class="form-group" style="flex: 1;">
+                  <label for="settingsBankMandiri" style="display: block; margin-bottom: 4px; font-size: 0.85rem; color: var(--text-secondary);">Nomor Rekening Mandiri</label>
+                  <input type="text" id="settingsBankMandiri" placeholder="Contoh: 987-654-3210" style="width: 100%; padding: 10px; background: rgba(10, 15, 30, 0.8); border: 1px solid var(--glass-border); border-radius: var(--radius-sm); color: white;" required>
+                </div>
+              </div>
+              <div class="form-group" style="margin-bottom: 1rem;">
+                <label for="settingsPhone" style="display: block; margin-bottom: 4px; font-size: 0.85rem; color: var(--text-secondary);">No. WhatsApp DKM (Official)</label>
+                <input type="text" id="settingsPhone" placeholder="Contoh: 0812XXXXXXXX" style="width: 100%; padding: 10px; background: rgba(10, 15, 30, 0.8); border: 1px solid var(--glass-border); border-radius: var(--radius-sm); color: white;" required>
+              </div>
+              <div class="form-group" style="margin-bottom: 1.5rem; display: flex; align-items: center; gap: 8px;">
+                <input type="checkbox" id="settingsEnableWaBot" checked style="width: auto; cursor: pointer;">
+                <label for="settingsEnableWaBot" style="font-size: 0.85rem; color: var(--text-secondary); cursor: pointer; user-select: none;">Aktifkan layanan WhatsApp Bot otomatis</label>
+              </div>
+              <button type="submit" class="btn-primary" style="width: 100%; padding: 12px; font-weight: 600;">💾 Simpan Pengaturan Masjid</button>
+            </form>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <!-- State 3: Donatur Portal -->
+    <div class="portal-wrapper donor-portal-container" id="donorPortalContainer" style="display: none; width: 100%; height: 100%;">
+      <aside class="dashboard-sidebar">
+        <div class="sidebar-header">
+          <div class="sidebar-brand">
+            <span class="brand-icon">💖</span>
+            <span class="brand-text">Amanah Donatur</span>
+          </div>
+          <button class="close-dashboard" id="closeDonorPortalBtn" aria-label="Close dashboard">&times;</button>
+        </div>
+        <nav class="sidebar-nav">
+          <ul>
+            <li><a href="#" class="sidebar-link active" data-tab="donor-summary">📊 Ringkasan Saya</a></li>
+            <li><a href="#" class="sidebar-link" data-tab="donor-send">❤️ Kirim Donasi</a></li>
+            <li><a href="#" class="sidebar-link" data-tab="donor-history">📜 Riwayat Donasi</a></li>
+            <li><a href="#" class="sidebar-link" data-tab="chatbot">🤖 Tanya Ustadz AI</a></li>
+          </ul>
+        </nav>
+        <div class="sidebar-footer">
+          <div class="user-profile">
+            <div class="user-avatar">DON</div>
+            <div class="user-profile-info">
+              <h4 class="donor-profile-name">Hamba Allah</h4>
+              <span>Donatur Terverifikasi</span>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      <main class="dashboard-main">
+        <header class="dashboard-header">
+          <div class="header-left">
+            <h2>Assalamualaikum, <span class="donor-name">Hamba Allah</span> 👋</h2>
+            <p>Salurkan infaq terbaik Anda dengan mudah, transparan, dan terverifikasi otomatis.</p>
+          </div>
+          <div class="header-right">
+            <button class="btn-secondary btn-switch-portal">◀ Ganti Akses</button>
+            <div class="current-date-badge">
+              <span class="calendar-icon">📅</span>
+              <span class="dashboardDateClass">Senin, 1 Juni 2026</span>
+            </div>
+          </div>
+        </header>
+
+        <!-- Panel Donatur: Ringkasan -->
+        <section class="dashboard-panel active" id="panel-donor-summary">
+          <div class="stats-overview">
+            <div class="stat-card">
+              <div class="stat-icon emerald">💝</div>
+              <div class="stat-info">
+                <h3>Total Donasi Disalurkan</h3>
+                <p class="stat-value" id="donorStatTotal">Rp 0</p>
+                <span class="stat-growth green" id="donorStatTransCount">Dari 0 Transaksi</span>
+              </div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon indigo">🕌</div>
+              <div class="stat-info">
+                <h3>Masjid Dibantu</h3>
+                <p class="stat-value" id="donorStatMosques">0 Masjid</p>
+                <span class="stat-growth green" id="donorStatRegions">Belum ada penyaluran</span>
+              </div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon gold">📜</div>
+              <div class="stat-info">
+                <h3>Sertifikat Penghargaan</h3>
+                <p class="stat-value" id="donorStatCerts">0 Sertifikat</p>
+                <span class="stat-growth green">Unduh Resmi</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="summary-grid">
+            <!-- Certificate Preview -->
+            <div class="chart-container">
+              <h3>📜 Sertifikat Donatur Digital Resmi</h3>
+              <div class="certificate-preview-card">
+                <div class="cert-border">
+                  <div class="cert-header">
+                    <h4>SERTIFIKAT PENGHARGAAN</h4>
+                    <span>Amanah Masjid Indonesia</span>
+                  </div>
+                  <div class="cert-body">
+                    <p class="cert-text-intro">Penghargaan ini diberikan dengan tulus kepada:</p>
+                    <p class="cert-recipient-name" id="certRecipient">Hamba Allah</p>
+                    <p class="cert-text-desc">Atas partisipasi aktif dan kedermawanannya dalam menyalurkan infaq, sedekah, dan zakat demi kemakmuran masjid di Indonesia secara amanah dan transparan.</p>
+                  </div>
+                  <div class="cert-footer">
+                    <div class="cert-sign">
+                      <span>Amanah Masjid DKM</span>
+                    </div>
+                    <div class="cert-id">
+                      <span>Ref ID: AM-CERT-9042</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div style="text-align: center; margin-top: 1.5rem;">
+                <button class="btn-primary" id="btnDownloadCert">📥 Unduh Sertifikat (PDF)</button>
+              </div>
+            </div>
+
+            <!-- Recent Activity Donatur -->
+            <div class="audit-log-container">
+              <h3>🕒 Aktivitas Donasi Terakhir Anda</h3>
+              <ul class="audit-list" id="donorRecentList">
+                <!-- Dikelola dinamis oleh JS -->
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- Panel Donatur: Kirim Donasi Cepat -->
+        <section class="dashboard-panel" id="panel-donor-send">
+          <div class="donations-grid">
+            <div class="add-program-form-container" style="padding: 2rem;">
+              <h3>❤️ Kirim Donasi Digital</h3>
+              <form id="donorSendForm" class="dashboard-form">
+                <div class="form-group">
+                  <label for="donorSelectMosque">Pilih Masjid Penerima</label>
+                  <select id="donorSelectMosque" required>
+                    <!-- Dynamically populated from LocalStorage mosques -->
+                    <option value="Masjid Al-Ikhlas">Masjid Al-Ikhlas (Utama)</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="donorSelectProgram">Pilih Program Masjid</label>
+                  <select id="donorSelectProgram" required>
+                    <option value="Beasiswa Tahfidz Al-Quran">Beasiswa Tahfidz Al-Quran</option>
+                    <option value="Dapur Ramadhan">Dapur Ramadhan</option>
+                    <option value="Renovasi Masjid">Renovasi Masjid</option>
+                    <option value="Infaq Umum Masjid">Infaq Umum Masjid</option>
+                  </select>
+                </div>
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="donorInputName">Nama Pengirim (Kosongkan jika Hamba Allah)</label>
+                    <input type="text" id="donorInputName" placeholder="Nama Lengkap Anda">
+                  </div>
+                  <div class="form-group">
+                    <label for="donorInputAmount">Nominal Donasi (Rp)</label>
+                    <input type="number" id="donorInputAmount" placeholder="Contoh: 100000" required>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="donorSelectMethod">Metode Pembayaran</label>
+                  <select id="donorSelectMethod" required>
+                    <option value="BCA">Transfer Bank BCA</option>
+                    <option value="Mandiri">Transfer Bank Mandiri</option>
+                    <option value="GOPAY">QRIS (GoPay / OVO)</option>
+                  </select>
+                </div>
+                
+                <div class="payment-instructions" id="paymentInstructions" style="padding: 1rem; background: var(--bg-deep); border-radius: var(--radius-sm); border: 1px solid var(--glass-border); margin-bottom: 1rem;">
+                  <p style="font-size: 0.85rem; color: var(--text-secondary);">Silakan transfer ke nomor rekening tujuan berikut:</p>
+                  <p style="font-size: 1rem; font-weight: 700; color: var(--color-primary-light); margin-top: 4px;" id="paymentTargetAcc">Bank BCA: 123-456-7890 a.n. Masjid Al-Ikhlas</p>
+                </div>
+
+                <div class="form-group">
+                  <label>Unggah Bukti Transfer (Picu Scan OCR AI)</label>
+                  <div class="ocr-dropzone" id="donorOcrDropzone">
+                    <input type="file" id="donorOcrFileInput" accept="image/*" style="display: none;">
+                    <div class="dropzone-content">
+                      <div class="dropzone-icon">📸</div>
+                      <h4>Klik untuk mengambil/mengunggah foto bukti bayar</h4>
+                      <p>Format: JPG, PNG; Maksimal 5MB</p>
+                    </div>
+                    <div class="scanner-laser" id="donorScannerLaser" style="display: none;"></div>
+                  </div>
+
+                  <!-- Demo OCR buttons for donor -->
+                  <div class="demo-ocr-shortcuts" style="margin-top: 1rem; display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; align-items: center;">
+                    <span style="font-size: 0.85rem; color: var(--text-secondary); text-align: center; display: inline-block; margin-right: 5px;">Demo Bukti Transfer Cepat:</span>
+                    <button type="button" class="btn-donor-demo-ocr" data-demo-type="valid-1" style="padding: 8px 12px; font-size: 0.8rem; background: rgba(16, 185, 129, 0.1); border: 1px solid var(--color-primary-glow); border-radius: 6px; color: var(--color-primary-light); cursor: pointer; transition: all 0.2s;">📄 BCA Rp 250k (Valid)</button>
+                    <button type="button" class="btn-donor-demo-ocr" data-demo-type="valid-2" style="padding: 8px 12px; font-size: 0.8rem; background: rgba(16, 185, 129, 0.1); border: 1px solid var(--color-primary-glow); border-radius: 6px; color: var(--color-primary-light); cursor: pointer; transition: all 0.2s;">📄 Mandiri Rp 1.0M (Valid)</button>
+                    <button type="button" class="btn-donor-demo-ocr" data-demo-type="fraud" style="padding: 8px 12px; font-size: 0.8rem; background: rgba(239, 68, 68, 0.1); border: 1px solid rgba(239, 68, 68, 0.3); border-radius: 6px; color: #f87171; cursor: pointer; transition: all 0.2s;">⚠️ Bukti Palsu (Fraud)</button>
+                  </div>
+                </div>
+
+                <!-- Hidden verification check -->
+                <div class="ocr-result-form" id="donorOcrResultForm" style="display: none; background: rgba(16, 185, 129, 0.05); border-color: var(--color-primary-glow);">
+                  <h4 style="color: var(--color-primary-light);">✓ OCR AI Selesai Mengekstrak Data Kuitansi</h4>
+                  <p style="font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 0.5rem;" id="donorOcrMessage"></p>
+                  <button type="button" class="btn-primary" id="btnConfirmDonorDonation">Kirim Donasi & Verifikasi Otomatis</button>
+                </div>
+              </form>
+            </div>
+            
+            <div class="history-section">
+              <h3>💡 Cara Kerja OCR AI Amanah Donasi:</h3>
+              <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 1rem;">
+                1. Isi detail tujuan dan nominal donasi pada form kirim donasi.<br>
+                2. Lakukan transfer sesuai instruksi rekening bank masjid penerima.<br>
+                3. Unggah tangkapan layar bukti transfer Anda di kolom dropzone.<br>
+                4. Mesin OCR AI akan otomatis memvalidasi nominal, tanggal, nama pengirim, dan mendeteksi duplikasi kuitansi secara cerdas dalam 2 detik.<br>
+                5. Setelah diverifikasi, donasi Anda langsung masuk laporan keuangan masjid secara *real-time*.<br>
+              </p>
+              <div style="background: rgba(245, 158, 11, 0.05); border: 1px solid var(--color-accent-glow); padding: 1rem; border-radius: var(--radius-md);">
+                <h4 style="color: var(--color-accent-light); font-size: 0.9rem; margin-bottom: 4px;">🔒 Jaminan Keamanan Transparansi</h4>
+                <p style="font-size: 0.75rem; color: var(--text-secondary);">Setiap transaksi dienkripsi (AES-256) dan dicatat pada audit log yang tidak dapat dimodifikasi oleh siapapun.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Panel Donatur: Riwayat Donasi -->
+        <section class="dashboard-panel" id="panel-donor-history">
+          <div class="history-section" style="width: 100%;">
+            <h3>📜 Seluruh Riwayat Penyaluran Infaq & Zakat Anda</h3>
+            <div class="table-wrapper">
+              <table class="donations-table">
+                <thead>
+                  <tr>
+                    <th>Ref ID</th>
+                    <th>Masjid Tujuan</th>
+                    <th>Program</th>
+                    <th>Nominal</th>
+                    <th>Tanggal</th>
+                    <th>Metode</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody id="donorHistoryTableBody">
+                  <!-- Dikelola dinamis oleh JS -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <!-- Back to Top Button -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+
+  <script type="module" src="script.js"></script>
+</body>
+</html>
