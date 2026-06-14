@@ -1001,7 +1001,7 @@
             <li><a href="#" class="sidebar-link active" data-tab="donor-summary">📊 Ringkasan Saya</a></li>
             <li><a href="#" class="sidebar-link" data-tab="donor-send">❤️ Kirim Donasi</a></li>
             <li><a href="#" class="sidebar-link" data-tab="donor-history">📜 Riwayat Donasi</a></li>
-            <li><a href="#" class="sidebar-link" data-tab="chatbot">🤖 Tanya Ustadz AI</a></li>
+            <li><a href="#" class="sidebar-link" data-tab="donor-chatbot">🤖 Tanya Ustadz AI</a></li>
           </ul>
         </nav>
         <div class="sidebar-footer">
@@ -1214,6 +1214,38 @@
                 </tbody>
               </table>
             </div>
+          </div>
+        </section>
+
+        <!-- Panel Donatur: AI Assistant Chatbot -->
+        <section class="dashboard-panel" id="panel-donor-chatbot">
+          <div class="chatbot-workspace">
+            <div class="chatbot-info">
+              <div class="chatbot-avatar">🤖</div>
+              <div class="chatbot-title">
+                <h3>Tanya Ustadz AI</h3>
+                <p>Mampu menjawab tanya jawab fiqih, kalkulator zakat, jadwal sholat, & info DKM.</p>
+              </div>
+            </div>
+            
+            <div class="chatbot-messages" id="donorChatbotMessages">
+              <div class="chat-message assistant">
+                <div class="message-content">
+                  Assalamu'alaikum! Saya Asisten AI Masjid. Ada yang bisa saya bantu hari ini? 🤲
+                </div>
+              </div>
+            </div>
+
+            <div class="chatbot-suggestions">
+              <button class="suggestion-btn donor-suggestion-btn" data-query="Berapa zakat penghasilan saya jika gaji Rp 10.000.000?">🧮 Hitung Zakat Penghasilan</button>
+              <button class="suggestion-btn donor-suggestion-btn" data-query="Jam berapa sholat Maghrib hari ini?">🌅 Jadwal Sholat Hari Ini</button>
+              <button class="suggestion-btn donor-suggestion-btn" data-query="Ada program sosial apa saja di masjid ini?">🤝 Info Program Masjid</button>
+            </div>
+
+            <form id="donorChatbotForm" class="chatbot-input-container">
+              <input type="text" id="donorChatbotInput" placeholder="Tulis pertanyaan Anda di sini..." required>
+              <button type="submit" class="btn-send-message">Kirim ✉️</button>
+            </form>
           </div>
         </section>
       </main>

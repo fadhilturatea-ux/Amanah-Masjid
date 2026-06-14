@@ -521,33 +521,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     return activeMosqueName;
   }
 
-  if (chatbotForm && chatbotInput && chatbotMessages) {
-    chatbotForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const query = chatbotInput.value.trim();
-      if (!query) return;
-      
-      appendChatMessage('user', query);
-      chatbotInput.value = '';
-      
-      const typingIndicator = appendChatMessage('assistant', 'Asisten AI sedang memikirkan jawaban...');
-      
-      setTimeout(() => {
-        typingIndicator.remove();
-        const response = getAIResponse(query);
-        appendChatMessage('assistant', response.text, response.reference);
-      }, 1000);
-    });
-
-    suggestionBtns.forEach(btn => {
-      btn.addEventListener('click', () => {
-        chatbotInput.value = btn.getAttribute('data-query');
-        chatbotForm.dispatchEvent(new Event('submit'));
-      });
-    });
-  }
-
-  function appendChatMessage(sender, text, reference = '') {
+  function appendChatMessage(container, sender, text, reference = '') {
+    if (!container) return null;
     const msg = document.createElement('div');
     msg.className = `chat-message ${sender}`;
     let contentHtml = `<div class="message-content">${text}`;
@@ -556,9 +531,70 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
     contentHtml += `</div>`;
     msg.innerHTML = contentHtml;
-    chatbotMessages.appendChild(msg);
-    chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+    container.appendChild(msg);
+    container.scrollTop = container.scrollHeight;
     return msg;
+  }
+
+  // DKM Chatbot
+  if (chatbotForm && chatbotInput && chatbotMessages) {
+    chatbotForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const query = chatbotInput.value.trim();
+      if (!query) return;
+      
+      appendChatMessage(chatbotMessages, 'user', query);
+      chatbotInput.value = '';
+      
+      const typingIndicator = appendChatMessage(chatbotMessages, 'assistant', 'Asisten AI sedang memikirkan jawaban...');
+      
+      setTimeout(() => {
+        typingIndicator.remove();
+        const response = getAIResponse(query);
+        appendChatMessage(chatbotMessages, 'assistant', response.text, response.reference);
+      }, 1000);
+    });
+
+    suggestionBtns.forEach(btn => {
+      if (!btn.classList.contains('donor-suggestion-btn')) {
+        btn.addEventListener('click', () => {
+          chatbotInput.value = btn.getAttribute('data-query');
+          chatbotForm.dispatchEvent(new Event('submit'));
+        });
+      }
+    });
+  }
+
+  // Donor Chatbot (Tanya Ustadz AI)
+  const donorChatbotForm = document.getElementById('donorChatbotForm');
+  const donorChatbotInput = document.getElementById('donorChatbotInput');
+  const donorChatbotMessages = document.getElementById('donorChatbotMessages');
+  const donorSuggestionBtns = document.querySelectorAll('.donor-suggestion-btn');
+
+  if (donorChatbotForm && donorChatbotInput && donorChatbotMessages) {
+    donorChatbotForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const query = donorChatbotInput.value.trim();
+      if (!query) return;
+      
+      appendChatMessage(donorChatbotMessages, 'user', query);
+      donorChatbotInput.value = '';
+      
+      const typingIndicator = appendChatMessage(donorChatbotMessages, 'assistant', 'Asisten AI sedang memikirkan jawaban...');
+      
+      setTimeout(() => {
+        typingIndicator.remove();
+        const response = getAIResponse(query);
+        appendChatMessage(donorChatbotMessages, 'assistant', response.text, response.reference);
+      }, 1000);
+    });
+
+    donorSuggestionBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        donorChatbotInput.value = btn.getAttribute('data-query');
+        donorChatbotForm.dispatchEvent(new Event('submit'));
+      });
+    });
   }
 
   function getAIResponse(query) {
@@ -1715,13 +1751,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
       });
       
-      if (tab === 'chatbot') {
-        const chatbotPanel = document.getElementById('panel-chatbot');
-        donorPanels.forEach(p => p.classList.remove('active'));
-        chatbotPanel.classList.add('active');
-        document.querySelector('.dkm-portal-container').style.display = 'none';
-        document.querySelector('.donor-portal-container').style.display = 'flex';
-      }
+      // Autolink to panel-donor-chatbot is handled automatically by data-tab naming standard
     });
   });
 
