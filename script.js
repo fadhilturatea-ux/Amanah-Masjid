@@ -261,6 +261,10 @@ document.addEventListener('DOMContentLoaded', async () => {
     const subject = document.getElementById('contactSubject').value;
     const message = document.getElementById('contactMessage').value;
     
+    // Log the message details for debugging/admin visibility
+    console.log(`Pesan masuk dari ${name} (${email}) - Subjek: ${subject}`);
+    console.log(`Isi Pesan: ${message}`);
+    
     // Button loading state
     const originalText = submitBtn.textContent;
     submitBtn.textContent = 'Mengirim...';
@@ -276,7 +280,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       contactForm.reset();
       
       // Show success notification
-      showNotification('Pesan berhasil dikirim! Kami akan segera menghubungi Anda.');
+      showNotification(`Jazakallah khair, ${name}! Pesan Anda mengenai "${subject}" telah terkirim.`);
       
       // Reset button
       setTimeout(() => {
@@ -327,7 +331,6 @@ document.addEventListener('DOMContentLoaded', async () => {
   }
 
   // === Parallax Effect for Hero ===
-  const hero = document.querySelector('.hero');
   const mosqueArt = document.querySelector('.hero-mosque-art');
   
   if (mosqueArt) {
@@ -538,7 +541,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   // DKM Chatbot
   if (chatbotForm && chatbotInput && chatbotMessages) {
-    chatbotForm.addEventListener('submit', (e) => {
+    chatbotForm.addEventListener('submit', async (e) => {
       e.preventDefault();
       const query = chatbotInput.value.trim();
       if (!query) return;
@@ -548,10 +551,16 @@ document.addEventListener('DOMContentLoaded', async () => {
       
       const typingIndicator = appendChatMessage(chatbotMessages, 'assistant', 'Asisten AI sedang memikirkan jawaban...');
       
-      setTimeout(() => {
-        typingIndicator.remove();
-        const response = getAIResponse(query);
-        appendChatMessage(chatbotMessages, 'assistant', response.text, response.reference);
+      setTimeout(async () => {
+        try {
+          const response = await getAIResponse(query);
+          typingIndicator.remove();
+          appendChatMessage(chatbotMessages, 'assistant', response.text, response.reference);
+        } catch (err) {
+          console.error("Asisten AI error:", err);
+          typingIndicator.remove();
+          appendChatMessage(chatbotMessages, 'assistant', 'Maaf, terjadi kesalahan saat menghubungi Asisten AI. Silakan coba beberapa saat lagi.');
+        }
       }, 1000);
     });
 
@@ -572,7 +581,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   const donorSuggestionBtns = document.querySelectorAll('.donor-suggestion-btn');
 
   if (donorChatbotForm && donorChatbotInput && donorChatbotMessages) {
-    donorChatbotForm.addEventListener('submit', (e) => {
+    donorChatbotForm.addEventListener('submit', async (e) => {
       e.preventDefault();
       const query = donorChatbotInput.value.trim();
       if (!query) return;
@@ -582,10 +591,16 @@ document.addEventListener('DOMContentLoaded', async () => {
       
       const typingIndicator = appendChatMessage(donorChatbotMessages, 'assistant', 'Asisten AI sedang memikirkan jawaban...');
       
-      setTimeout(() => {
-        typingIndicator.remove();
-        const response = getAIResponse(query);
-        appendChatMessage(donorChatbotMessages, 'assistant', response.text, response.reference);
+      setTimeout(async () => {
+        try {
+          const response = await getAIResponse(query);
+          typingIndicator.remove();
+          appendChatMessage(donorChatbotMessages, 'assistant', response.text, response.reference);
+        } catch (err) {
+          console.error("Ustadz AI error:", err);
+          typingIndicator.remove();
+          appendChatMessage(donorChatbotMessages, 'assistant', 'Maaf, terjadi kesalahan saat menghubungi Ustadz AI. Silakan coba beberapa saat lagi.');
+        }
       }, 1000);
     });
 
@@ -597,12 +612,13 @@ document.addEventListener('DOMContentLoaded', async () => {
     });
   }
 
-  function getAIResponse(query) {
+  async function getAIResponse(query) {
     const q = query.toLowerCase();
     const currentMosqueName = getContextMosqueName();
     const currentMosque = mosques.find(m => m.name === currentMosqueName) || mosques[0];
     const filteredProgs = mosquePrograms.filter(p => p.mosqueName === currentMosqueName);
     
+    // 1. Local quick matches for specific queries
     if (q.includes('zakat') && (q.includes('hitung') || q.includes('gaji') || q.includes('nominal'))) {
       const salaryMatch = query.match(/\d[\d.]*/);
       let income = 10000000;
@@ -657,12 +673,70 @@ document.addEventListener('DOMContentLoaded', async () => {
         text: `Pengurus DKM **${currentMosque.name}** dipimpin oleh **${currentMosque.dkm}**. <br>Jika Anda memerlukan koordinasi lebih lanjut, Anda dapat menghubungi no resmi WhatsApp pengurus di **${currentMosque.phone}** atau berkunjung ke kantor sekretariat masjid.`,
         reference: `Profil Pengurus DKM ${currentMosque.name}`
       };
-    } else {
-      return {
-        text: `Jazakallahu khairan atas pertanyaan Anda. Untuk pertanyaan keagamaan/fiqih mendalam, Anda dapat berkonsultasi langsung dengan ustadz atau dewan pembina **${currentMosque.name}** setelah shalat berjamaah.<br><br>Apakah ada informasi administratif, saldo kas, program sosial, atau perihal zakat dari **${currentMosque.name}** yang ingin Anda tanyakan kembali?`,
-        reference: `Layanan Umat ${currentMosque.name}`
-      };
     }
+
+    // 2. Google Gemini API integration if API key is provided
+    const geminiApiKey = import.meta.env.VITE_GEMINI_API_KEY;
+    if (geminiApiKey && !geminiApiKey.includes('your-gemini-api-key')) {
+      try {
+        const systemPrompt = `Anda adalah Ustadz AI, asisten virtual cerdas untuk ${currentMosque.name}.
+Tugas Anda:
+1. Menjawab pertanyaan keagamaan (fiqih, akidah, akhlak, ibadah, dll.) dengan ramah, sopan, dan sesuai ajaran Islam Ahlussunnah wal Jama'ah.
+2. Selalu menyapa dengan salam Islam yang hangat ("Assalamu'alaikum").
+3. Menyertakan rujukan ringkas dari Al-Quran atau Hadits sahih jika relevan.
+4. Jika pertanyaan sangat kompleks atau memerlukan fatwa khusus, sarankan berkonsultasi langsung dengan Ustadz ${currentMosque.dkm} di masjid setelah shalat.
+5. Format jawaban menggunakan tag HTML sederhana (gunakan <br> untuk baris baru, <strong> untuk teks tebal). Gunakan Bahasa Indonesia yang baik.`;
+
+        const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${geminiApiKey}`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            contents: [
+              {
+                role: 'user',
+                parts: [{ text: `${systemPrompt}\n\nPertanyaan jamaah: ${query}` }]
+              }
+            ],
+            generationConfig: {
+              maxOutputTokens: 500,
+              temperature: 0.7
+            }
+          })
+        });
+
+        if (response.ok) {
+          const data = await response.json();
+          let replyText = data.candidates?.[0]?.content?.parts?.[0]?.text || '';
+          if (replyText) {
+            // Clean markdown style bold to html bold
+            replyText = replyText.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+            replyText = replyText.replace(/\*(.*?)\*/g, '<em>$1</em>');
+            replyText = replyText.replace(/\n/g, '<br>');
+            
+            let referenceText = `Ustadz AI ${currentMosque.name}`;
+            const refMatch = replyText.match(/(?:Rujukan|Referensi|QS\.|HR\.)\s*:\s*([^\n<]+)/i);
+            if (refMatch) {
+              referenceText = refMatch[0].trim();
+            }
+
+            return {
+              text: replyText,
+              reference: referenceText
+            };
+          }
+        }
+      } catch (err) {
+        console.error("Gemini API call failed:", err);
+      }
+    }
+
+    // 3. Fallback response with setup advice
+    return {
+      text: `Jazakallahu khairan atas pertanyaan Anda. Untuk pertanyaan keagamaan/fiqih mendalam, Anda dapat berkonsultasi langsung dengan ustadz atau dewan pembina **${currentMosque.name}** setelah shalat berjamaah.<br><br><small style="color: var(--text-muted); display: block; margin-top: 1rem; border-top: 1px dashed #ddd; padding-top: 0.5rem;">💡 <strong>Developer Tip:</strong> Hubungkan Ustadz AI ke Google Gemini API secara langsung dengan mendefinisikan <code>VITE_GEMINI_API_KEY</code> pada file <code>.env</code> Anda.</small>`,
+      reference: `Layanan Umat ${currentMosque.name}`
+    };
   }
 
   // === WhatsApp Simulator (Database Connected) ===
@@ -1106,7 +1180,6 @@ document.addEventListener('DOMContentLoaded', async () => {
             donationNum.dataset.suffix = '';
             donationNum.dataset.prefix = 'Rp ';
           } else {
-            const formattedDonations = (totalDonationsAmount / 1000000).toFixed(1).replace('.', ',');
             donationNum.dataset.target = parseFloat((totalDonationsAmount / 1000000).toFixed(1));
             donationNum.dataset.suffix = ' Juta+';
             donationNum.dataset.prefix = 'Rp ';
@@ -1149,8 +1222,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     renderLandingPagePrograms();
 
     // Animate counters
-    const counterElements = document.querySelectorAll('[data-target]');
-    counterElements.forEach(el => animateCounter(el));
+    const targetCounterElements = document.querySelectorAll('[data-target]');
+    targetCounterElements.forEach(el => animateCounter(el));
   }
 
   // 2. Synchronize Dashboards
